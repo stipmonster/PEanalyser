@@ -7,14 +7,14 @@ import subprocess
 def printinfo(check):
     for info in check:
         if info[0] != '':
-            print info[1] + "\t",
+            print info[1] + ",",
     print
 
 def start(filename):
     print "# stack protection:"
     print
     
-    print "ASLR\tHigh entropy ASLR\tDEP/NX\tSEH\tStack cookies (EXPERIMENTAL)\t"
+    print "ASLR,\"High entropy ASLR\",DEP/NX,SEH,\"Stack cookies (EXPERIMENTAL)\""
     process = subprocess.Popen(["/usr/bin/pesec","-f","csv",filename], stdout=subprocess.PIPE)
             
             #exit_code = os.waitpid(process.pid, 0)
