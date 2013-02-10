@@ -29,8 +29,8 @@ def parseStringStruct(Ioffset,data,data_rva,pe):
     
 # Fetch the index of the resource directory entry containing the strings
 #
-def start(filename):
-    pe =  pefile.PE(filename)
+def start(filename,pe):
+    #pe =  pefile.PE(filename)
     
     rt_version_idx = [
         entry.id for entry in 
