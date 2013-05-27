@@ -5,6 +5,8 @@ import sys
 import subprocess
 import pefile
 
+def info(): 
+        return {"pluginName": "sectionFlags", "Version": (0,1)}
 
 def stackcookies(pe):
     mv2010=[0x55, 0x8b, 0xec, 0x83,0x33, 0xc5, 0x33, 0xcd,0xe8, 0xc3]
@@ -23,9 +25,10 @@ def printinfo(check):
         print "yes,",
     else:
         print "no,",
-    
+
+
 def start(filename,pe):
-    print "# stack protection:"
+    print "## stack protection:"
     print
     
     print "ASLR,\"High entropy ASLR\",DEP/NX,SEH,\"Stack cookies (EXPERIMENTAL)\""
